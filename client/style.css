@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #101010;
+  font-family: "Open Sans", "Roboto", Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  color: #fff;
+  background: #101010;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container form textarea {
+  color: #fff;
+  font-size: 2em;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.container form #submitForm {
+  display: none;
+}
