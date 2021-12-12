@@ -67,7 +67,7 @@ stemmer = PorterStemmer()
 wordnet_lemmatizer = WordNetLemmatizer()
 
 # load data
-spam = pd.read_csv("spam-detector.csv", usecols = [0, 1], engine = 'python')
+spam = pd.read_csv("dataset.csv", usecols = [0, 1], engine = 'python')
 #spam.head() - to print first five rows of our dataset
 
 #Converting the read dataset in to a list of tuples which is a list (message, label)

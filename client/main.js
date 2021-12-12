@@ -8,6 +8,15 @@ const $output = document.querySelector(".output");
 const $button = document.querySelector("#submitForm");
 
 $message.addEventListener("keyup", (e) => {
+  // backspace
+  if (e.keyCode === 8) {
+    $output.classList.remove("spam");
+    $output.classList.remove("ham");
+    $message.classList.remove("spam");
+    $message.classList.remove("ham");
+    $output.innerHTML = `<p></p>`;
+  }
+
   // ctrl + enter
   if (e.keyCode === 13 && e.ctrlKey) {
     $button.click();
@@ -27,8 +36,19 @@ $form.addEventListener("submit", (e) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-      $output.innerHTML = `<p>${JSON.stringify(data, undefined, 2)}</p>`;
+      if (data.result === "ham") {
+        $output.classList.remove("spam");
+        $output.classList.add("ham");
+        $message.classList.remove("spam");
+        $message.classList.add("ham");
+        $output.innerHTML = `<p>Looks Good</p>`;
+      } else {
+        $output.classList.remove("ham");
+        $output.classList.add("spam");
+        $message.classList.remove("ham");
+        $message.classList.add("spam");
+        $output.innerHTML = `<p>Looks like SPAM !!</p>`;
+      }
     })
     .catch((err) => console.log(err));
 });

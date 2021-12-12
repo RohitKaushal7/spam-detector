@@ -25,8 +25,21 @@ body {
   background: transparent;
   border: none;
   outline: none;
+  transition: color 0.3s ease-out;
+}
+.container .output {
+  height: 2em;
+  font-family: monospace;
+  transition: color 0.3s ease-out;
 }
 
 .container form #submitForm {
   display: none;
+}
+
+.spam {
+  color: #ff0000 !important;
+}
+.ham {
+  color: #12ff56 !important;
 }
