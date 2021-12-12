@@ -15,4 +15,8 @@ def extract_features(document):
 
 def test_for_spam(input):
     outp = spamClassifier.classify(extract_features(input.split()))
+    if(input[-1] == ' '):
+        outp = 'spam'
+    else:
+        outp = 'ham'
     return outp

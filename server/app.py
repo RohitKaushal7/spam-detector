@@ -9,7 +9,8 @@ CORS(app)
 @app.route('/test', methods=['GET','POST'])
 def test():
     body = request.get_json()
-    result = test_for_spam(body['message'])
+    message = body['message']
+    result = test_for_spam(message)
     return {'result': result, 'body': body}
 
 
